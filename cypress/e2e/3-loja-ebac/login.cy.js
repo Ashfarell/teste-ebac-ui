@@ -10,7 +10,7 @@ describe('Funcionalidade: Login', () => {
         cy.screenshot
     });
  
-    it.only('Deve fazer login com sucesso', () => {
+    it('Deve fazer login com sucesso', () => {
         //cy.visit('http://lojaebac.ebaconline.art.br/minha-conta/')
        cy.get('#username').type('jean.teste@teste.com.br')
        cy.get('#password').type('Jlb@1988')
