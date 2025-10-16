@@ -7,6 +7,10 @@ describe('Funcionalidade: cadastro', () => {
         cy.visit('http://lojaebac.ebaconline.art.br/minha-conta/')
         })
 
+  after(() => {
+        cy.screenshot
+    });
+
     it('Deve completar o cadastro com sucesso', () => {
     cy.get('#reg_email').type(faker.internet.email())
     cy.get('#reg_password').type(faker.internet.password())
