@@ -16,6 +16,7 @@ describe('Funcionalidade: Login', () => {
        cy.get('#password').type('Jlb@1988')
         cy.get('.woocommerce-form > .button').click()
          cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain' , 'Olá, jean.teste (não é jean.teste? Sair)')
+         cy.get('.woocommerce-MyAccount-content > :nth-child(3)').should('exist')
     })
 
     it('Deve exibir uma mensagem de erro ao inserir usuário inválido', () => {
