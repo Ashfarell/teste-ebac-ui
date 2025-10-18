@@ -4,7 +4,8 @@ import { faker } from '@faker-js/faker';
 describe('Funcionalidade: cadastro', () => {
 
     before(() => {
-        cy.visit('http://lojaebac.ebaconline.art.br/minha-conta/')
+        //cy.visit('http://lojaebac.ebaconline.art.br/minha-conta/')  forma inicial
+          cy.visit('minha-conta')                                   // forma com baseUrl no cypress.config.js
         });
 
     it('Deve completar o cadastro com sucesso', () => {
