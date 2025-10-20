@@ -48,12 +48,15 @@ it('Deve fazer login com sucesso usando massa de dados', () => {   //puxa do per
         cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain' , 'Olá, jean.teste (não é jean.teste? Sair)')
         cy.get('.woocommerce-MyAccount-content > :nth-child(3)').should('exist')
 });
-it.only('Deve fazer login com sucesso usando Fixture', () => {
+it('Deve fazer login com sucesso usando Fixture', () => {
     cy.fixture('perfil').then(dados => {
         cy.get('#username').type(dados.nome, {log: false})    //p/ n/ mostrar o nome no log do cypress
         cy.get('#password').type(dados.senha, {log: false})   // p/ n/ mostrar a senha no log do cypress
         cy.get('.woocommerce-form > .button').click()   
 })
 });
-
+it.only('Deve fazer login usando comando customizado', () => {
+    cy.login('jean.teste@teste.com.br', 'Jlb@1988')   // usando comando customizado criado em commands.js //poderia usar FAKER/FIXTURE/MASSA DE DADOS
+    cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain' , 'Olá, jean.teste (não é jean.teste? Sair)')
+})
 })
