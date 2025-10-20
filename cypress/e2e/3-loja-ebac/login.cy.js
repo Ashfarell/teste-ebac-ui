@@ -1,5 +1,5 @@
 // <reference types="cypress" />
-const perfil = require('../../fixtures/perfil.json')
+const perfil = require('../../fixtures/perfil.json')    //importa o arquivo perfil.json (massa de dados)
 
 describe('Funcionalidade: Login', () => {
 
@@ -41,7 +41,7 @@ it('Deve exibir mensagem de erro de senha', () => {
         cy.get ('.woocommerce-error').should('exist')
 
 });
-it('Deve fazer login com sucesso usando massa de dados', () => {
+it('Deve fazer login com sucesso usando massa de dados', () => {   //puxa do perfil.json
         cy.get('#username').type(perfil.nome)
         cy.get('#password').type(perfil.senha)
         cy.get('.woocommerce-form > .button').click()
@@ -50,9 +50,9 @@ it('Deve fazer login com sucesso usando massa de dados', () => {
 });
 it.only('Deve fazer login com sucesso usando Fixture', () => {
     cy.fixture('perfil').then(dados => {
-        cy.get('#username').type(dados.nome, {log: false}) 
-        cy.get('#password').type(dados.senha, {log: false})
-        cy.get('.woocommerce-form > .button').click()
+        cy.get('#username').type(dados.nome, {log: false})    //p/ n/ mostrar o nome no log do cypress
+        cy.get('#password').type(dados.senha, {log: false})   // p/ n/ mostrar a senha no log do cypress
+        cy.get('.woocommerce-form > .button').click()   
 })
 });
 

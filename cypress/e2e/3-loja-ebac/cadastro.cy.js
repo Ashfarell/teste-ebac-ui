@@ -27,9 +27,11 @@ cy.get('.woocommerce-message').should('contain' , 'Detalhes da conta modificados
         var email = faker.internet.email()
         var nome = faker.person.firstName()
         var sobrenome = faker.person.lastName()
+        var senha = faker.internet.password()
 
 cy.get('#reg_email').type(email)
- cy.get('#reg_password').type(faker.internet.password())
+ //cy.get('#reg_password').type(faker.internet.password())
+ cy.get('#reg_password').type(senha)
  cy.get(':nth-child(4) > .button').click()
  //cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain' , 'Olá,')
  cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('exist')
