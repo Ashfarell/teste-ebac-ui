@@ -26,6 +26,15 @@
         cy.get('#account_last_name').type(sobrenome)
         cy.get('.woocommerce-Button').click()
         })
+
+    Cypress.Commands.add('completarCadastro', (nome, sobrenome) => {
+        cy.get('.woocommerce-MyAccount-navigation-link--edit-account > a').click()
+        cy.get('#account_first_name').type(nome)
+        cy.get('#account_last_name').type(sobrenome)
+        cy.get('.woocommerce-Button').click()
+    })
+
+
 //
 //
 // -- This is a child command --
