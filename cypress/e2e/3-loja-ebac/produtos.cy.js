@@ -43,7 +43,7 @@ beforeEach(() => {
         cy.get('.woocommerce-message').should('contain', qtd)                                                                     //forma com variável
     });
 
-    it.only('Deve adicionar um produto ao carrinho buscando da massa de dados', () =>{
+    it.only('Deve adicionar um produto ao carrinho buscando da massa de dados', () =>{                 //usando ARRAY p/ buscar os dados
     cy.fixture('produtos').then(dados=> {
     produtosPage.buscarProduto(dados[2].nomeProduto)
     produtosPage.addProdutoCarrinhoX(dados[2].tamanho, dados[2].cor, dados[2].qtd)
