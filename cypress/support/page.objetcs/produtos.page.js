@@ -17,11 +17,24 @@ cy.get('.products > .row ')
  }
 
  visitarProduto(nomeProduto) {  
-    cy.visit(`produto/${nomeProduto}`)                           //INTERPOLAÇÃO ==>concatenar a url base + o caminho do produto
+    //cy.visit(`produto/${nomeProduto}`)                                   //INTERPOLAÇÃO ==>concatenar a url base + o caminho do produto
+    const urlFormatada = nomeProduto.replace(/ /g, '-')                    //usando REGEX p/ substituir ' ' por '-'  
+    cy.visit(`produto/${urlFormatada}`)                                   
  }
 
- addProdutoCarrinho() {
-    //código a ser escrito
+ addProdutoCarrinho() {                                                    //versão sem parâmetro  ==>necessário alterar aqui
+   cy.get('.button-variable-item-S').click()
+   cy.get('.button-variable-item-Gray').click()
+   cy.get('.input-text').clear().type('2')                                //clear p/ limpar o campo antes de digitar
+   cy.get('.single_add_to_cart_button').click()
+ }
+
+ addProdutoCarrinhoX(tamanho, cor, qtd) {                          //versão com parâmetro   ==>p/ ser mais dinâmica
+   cy.get('.button-variable-item-'+tamanho).click()
+   //cy.get('.button-variable-item-'+cor).click()                         //forma tradicional
+   cy.get(`.button-variable-item-${cor}`).click()                         //forma usando INTERPOLAÇÃO
+   cy.get('.input-text').clear().type(qtd)                         //clear p/ limpar o campo antes de digitar
+   cy.get('.single_add_to_cart_button').click()
  }
 
 }
