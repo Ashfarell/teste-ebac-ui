@@ -10,16 +10,14 @@ cy.get('.search > .tbay-search-form > .form-ajax-search > .form-group > .input-g
 //cy.get('.button-search').eq(1).click()          //forma simplificada quando há mais de um elemento com a mesma classe (inspecionando página)
     }
 
-
  buscarProdutoLista(nomeProduto) {
 cy.get('.products > .row ')
 .contains(nomeProduto)
 .click()
-
  }
 
- visitarProduto() {
-    //código a ser escrito
+ visitarProduto(nomeProduto) {  
+    cy.visit(`produto/${nomeProduto}`)                           //INTERPOLAÇÃO ==>concatenar a url base + o caminho do produto
  }
 
  addProdutoCarrinho() {

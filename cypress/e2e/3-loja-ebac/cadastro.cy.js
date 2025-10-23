@@ -44,12 +44,12 @@ cy.get('.woocommerce-Button').click()
 cy.get('.woocommerce-message').should('contain' , 'Detalhes da conta modificados com sucesso.')
 });
 
-it('Deve completar o cadastro usando comando customizado.1', () => {
-  cy.preCadastro(faker.internet.email(), faker.internet.password())
+it.only('Deve completar o cadastro usando comando customizado.1', () => {
+  cy.preCadastroSimples(faker.internet.email(), faker.internet.password())
   cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('exist')
 });
 
-it.only('Deve completar o cadastro usando comando customizado.2', () => {
+it('Deve completar o cadastro usando comando customizado.2', () => {
   cy.preCadastro(faker.internet.email(), faker.internet.password(), faker.person.firstName(), faker.person.lastName())
   cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('exist')
   cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain' , 'Olá,')

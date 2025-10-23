@@ -48,7 +48,7 @@ it('Deve fazer login com sucesso usando massa de dados', () => {   //puxa do per
         cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain' , 'Olá, jean.teste (não é jean.teste? Sair)')
         cy.get('.woocommerce-MyAccount-content > :nth-child(3)').should('exist')
 });
-it.only('Deve fazer login com sucesso usando Fixture', () => {
+it('Deve fazer login com sucesso usando Fixture', () => {
     cy.fixture('perfil').then(dados => {
         cy.get('#username').type(dados.usuario, {log: false})    //p/ n/ mostrar o nome no log do cypress
         cy.get('#password').type(dados.senha, {log: false})   // p/ n/ mostrar a senha no log do cypress
@@ -59,4 +59,11 @@ it('Deve fazer login usando comando customizado', () => {
     cy.login('jean.teste@teste.com.br', 'Jlb@1988')   // usando comando customizado criado em commands.js //poderia usar FAKER/FIXTURE/MASSA DE DADOS
     cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain' , 'Olá, jean.teste (não é jean.teste? Sair)')
 })
+it.only('Deve fazer login e logout usando comando customizado', () => {
+cy.loginLogout('jean.teste@teste.com.br', 'Jlb@1988')  
+//cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain' , 'olá,')
+//cy.get('.woocommerce-MyAccount-content > :nth-child(3)').should('exist')
+cy.get('.icon-user-unfollow').should('exist')
+});
+
 })

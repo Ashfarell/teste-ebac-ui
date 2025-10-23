@@ -1,4 +1,5 @@
 // <reference types="cypress" />
+import { vi } from "@faker-js/faker";
 import produtosPage from "../../support/page.objetcs/produtos.page";
 
 describe('Funcionalidade: Produtos', () => {
@@ -9,7 +10,7 @@ beforeEach(() => {
     produtosPage.visitarUrl()
 });
 
-    it.only('Deve buscar um produto com sucesso', () => {  
+    it('Deve buscar um produto com sucesso', () => {  
         produtosPage.buscarProduto('Atlas Fitness Tank');
         cy.get('.product_title').should('contain', 'Atlas Fitness Tank');
         cy.get('.product_title').should('exist');
@@ -18,6 +19,11 @@ beforeEach(() => {
     it('Deve selecionar um produto da lista', () => {
       produtosPage.buscarProdutoLista('Ariel Roll Sleeve Sweatshirt');
     });
+
+    it.only('Deve visitar a página do produto especifíco', () => {
+   produtosPage.visitarProduto('augusta-pullover-jacket');
+    });
+
     
     it('Deve adicionar um produto ao carrinho', () => {
     });
