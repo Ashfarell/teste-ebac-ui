@@ -37,5 +37,18 @@ cy.get('.products > .row ')
    cy.get('.single_add_to_cart_button').click()
  }
 
+ fazerLogin(usuario, senha) {
+    cy.get('#username').type(usuario)
+    cy.get('#password').type(senha)
+    cy.get('.woocommerce-form > .button').click()
+ }
+
+ limparcarrinho() {
+  cy.get('.dropdown-toggle > .mini-cart-items').click()
+  cy.get('#cart > .dropdown-menu > .widget_shopping_cart_content > .mini_cart_content > .mini_cart_inner > .mcart-border > .buttons > .view-cart').click()
+  cy.get('.remove > .fa').click()
+ }
+
+
 }
 export default new ProdutosPage();     //precisa export ar a classe para usar em outros arquivos/ nos arquivos de teste precisa importar
