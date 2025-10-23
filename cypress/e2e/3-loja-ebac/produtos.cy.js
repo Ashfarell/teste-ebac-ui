@@ -34,16 +34,22 @@ beforeEach(() => {
         cy.get('.woocommerce-message').should('exist')
     });
 
-    it.only('Deve adicionar um produto ao carrinho - Versão dinâmica', () => {
+    it('Deve adicionar um produto ao carrinho - Versão dinâmica', () => {
         produtosPage.buscarProduto('Josie Yoga Jacket')
         //produtosPage.addProdutoCarrinhoX('M', 'Black', 2)                    //forma tradicional
-
         let qtd = 5                                                             //variável p/ quantidade
         produtosPage.addProdutoCarrinhoX('M', 'Black', qtd)                    //forma com variável    
         cy.get('.woocommerce-message').should('contain', qtd + ' × “Josie Yoga Jacket” foram adicionados no seu carrinho.')       //forma com variável
         cy.get('.woocommerce-message').should('contain', qtd)                                                                     //forma com variável
     });
 
+    it.only('Deve adicionar um produto ao carrinho buscando da massa de dados', () =>{
+    cy.fixture('produtos').then(dados=> {
+    produtosPage.buscarProduto(dados[2].nomeProduto)
+    produtosPage.addProdutoCarrinhoX(dados[2].tamanho, dados[2].cor, dados[2].qtd)
+    cy.get('.woocommerce-message').should('contain', dados[2].nomeProduto)
+    })
+});
 
 })
 
