@@ -8,7 +8,7 @@ describe('Funcionalidade: cadastro', () => {
           cy.visit('minha-conta')                                   // forma com baseUrl no cypress.config.js
         });
 
-    it('Deve completar o cadastro com sucesso', () => {
+    it.only('Deve completar o cadastro com sucesso', () => {
     cy.get('#reg_email').type(faker.internet.email())
     cy.get('#reg_password').type(faker.internet.password())
     cy.get(':nth-child(4) > .button').click()
@@ -44,7 +44,7 @@ cy.get('.woocommerce-Button').click()
 cy.get('.woocommerce-message').should('contain' , 'Detalhes da conta modificados com sucesso.')
 });
 
-it.only('Deve completar o cadastro usando comando customizado.1', () => {
+it('Deve completar o cadastro usando comando customizado.1', () => {
   cy.preCadastroSimples(faker.internet.email(), faker.internet.password())
   cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('exist')
 });

@@ -47,7 +47,7 @@
         cy.get('.topbar-inner > :nth-child(1) > .list-inline > :nth-child(2) > a').click()   //comando p/ clicar em logout
             })
 
-    Cypress.Commands.add('logout', () => {                                              //esse comando n/ recebe parâmetro, apenas clica no botão logout
+    Cypress.Commands.add('logout', () => {                                                   //esse comando n/ recebe parâmetro, apenas clica no botão logout
     cy.get('.topbar-inner > :nth-child(1) > .list-inline > :nth-child(2) > a').click()
     })
 
@@ -58,6 +58,8 @@
     Cypress.Commands.add('visitarSite', (site) => {  
         cy.visit(site) // forma com baseUrl no cypress.config.js
     })
+
+    
 
 //
 //

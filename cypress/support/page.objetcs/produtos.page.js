@@ -49,6 +49,5 @@ cy.get('.products > .row ')
   cy.get('.remove > .fa').click()
  }
 
-
 }
 export default new ProdutosPage();     //precisa export ar a classe para usar em outros arquivos/ nos arquivos de teste precisa importar
