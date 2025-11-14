@@ -1,5 +1,0 @@
-// <reference types="cypress" />
-
-describe ('Funcionalidade: Google', () =>{
-cypress.visit('https://www.google.com/')
-})
