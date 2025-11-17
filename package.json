@@ -4,7 +4,6 @@
   "description": "Aula 1: Automação de testes com Cypress",
   "main": "index.js",
   "scripts": {
-    "test1": "npx cypress run -- browser chrome",
     "cy:dash" : "npx cypress run --record --key 3d3f8c76-5645-4a8e-bae5-da53f92980b6",
     "start": "npx serverest",
     "test": "npx cypress run" 
