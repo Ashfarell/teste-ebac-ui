@@ -2,18 +2,25 @@ pipeline {
     agent any
 
     stages {
-        stage('Setup') {
+        stage('Clonar') {
             steps {
                 git branch: 'main', url: 'https://github.com/Ashfarell/teste-ebac-ui.git'
-                sh 'npm install'
             }
         }
-        stage('Test') {
+        stage('Instalação') {
             steps {
-                git branch: 'main', url: 'https://github.com/Ashfarell/teste-ebac-ui.git'
-                sh '''set NO_COLOR=1
-npm test'''
+                bat 'npm install'
             }
         }
+        stage('Subir servidor') {
+            steps {
+                bat 'npm start'
+            }
         }
+        stage('Testes') {
+            steps {
+                bat 'npm run cy:run'
+            }
+        }
+    }
 }
