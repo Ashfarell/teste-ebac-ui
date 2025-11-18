@@ -4,18 +4,14 @@
   "description": "Aula 1: Automação de testes com Cypress",
   "main": "index.js",
   "scripts": {
-   "cy:run": "npx cypress run",
-   "start": "Cypress",
-   "cy:report": "npx mochawesome-merge ./mochawesome-report/mochawesome*.json  > mochawesome-report/report.json && npx marge mochawesome-report/report.json"
-       },
+    "cy:run": "npx cypress run",
+    "start": "Cypress",
+    "cy:report": "npx mochawesome-merge ./mochawesome-report/mochawesome*.json  > mochawesome-report/report.json && npx marge mochawesome-report/report.json"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@faker-js/faker": "^8.3.1",
-    "cypress": "^13.6.0"
-  },
-"dependencies": {
     "cypress-multi-reporters": "^1.5.0",
     "faker": "^6.6.6",
     "joi": "^17.4.2",
@@ -23,5 +19,8 @@
     "mochawesome": "^6.2.2",
     "mochawesome-merge": "^4.2.0",
     "mochawesome-report-generator": "^5.2.0"
+  },
+  "devDependencies": {
+    "cypress": "^15.6.0"
   }
 }
