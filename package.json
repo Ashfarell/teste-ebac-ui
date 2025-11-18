@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
    "cy:run": "npx cypress run",
-   "start": "Cypress",
+   //"start": "Cypress",
    "cy:report": "npx mochawesome-merge ./mochawesome-report/mochawesome*.json  > mochawesome-report/report.json && npx marge mochawesome-report/report.json"
        },
   "keywords": [],
