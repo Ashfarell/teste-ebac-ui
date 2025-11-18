@@ -29,7 +29,7 @@ pipeline {
 
       steps {
 
-        bat 'npm run cy:run'
+        bat 'npm run cy:run --no-color'
 
       }
 
