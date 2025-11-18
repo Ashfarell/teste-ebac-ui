@@ -9,12 +9,12 @@
     "start": "Cypress",
     "cy:report": "npx mochawesome-merge ./mochawesome-report/mochawesome*.json  > mochawesome-report/report.json && npx marge mochawesome-report/report.json"
     
-},
+ },
 
    "cy:run": "npx cypress run",   
   "cy:report": "npx mochawesome-merge ./mochawesome-report/mochawesome*.json  > mochawesome-report/report.json && npx marge mochawesome-report/report.json"
   
-  },
+   },
 
   "keywords": [],
   "author": "",
@@ -28,7 +28,7 @@
     "mochawesome-merge": "^4.2.0",
     "mochawesome-report-generator": "^5.2.0"
     
-  },
+   },
   "devDependencies": {
     "cypress": "^15.6.0"
     
