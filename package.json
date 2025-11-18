@@ -4,7 +4,7 @@
   "description": "Aula 1: Automação de testes com Cypress",
   "main": "index.js",
   "scripts": {
-   "cy:run": "npx cypress run",
+   "cy:run": "npx cypress run",   
   "cy:report": "npx mochawesome-merge ./mochawesome-report/mochawesome*.json  > mochawesome-report/report.json && npx marge mochawesome-report/report.json"
        },
   "keywords": [],
