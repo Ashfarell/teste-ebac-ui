@@ -13,7 +13,7 @@
    "cy:run": "npx cypress run",   
   "cy:report": "npx mochawesome-merge ./mochawesome-report/mochawesome*.json  > mochawesome-report/report.json && npx marge mochawesome-report/report.json"
        },
->>>>>>> f4358876c896326a74e3f12f9ac7ee67a45159c0
+
   "keywords": [],
   "author": "",
   "license": "ISC",
