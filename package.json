@@ -4,10 +4,16 @@
   "description": "Aula 1: Automação de testes com Cypress",
   "main": "index.js",
   "scripts": {
+<<<<<<< HEAD
     "cy:run": "npx cypress run",
     "start": "Cypress",
     "cy:report": "npx mochawesome-merge ./mochawesome-report/mochawesome*.json  > mochawesome-report/report.json && npx marge mochawesome-report/report.json"
   },
+=======
+   "cy:run": "npx cypress run",   
+  "cy:report": "npx mochawesome-merge ./mochawesome-report/mochawesome*.json  > mochawesome-report/report.json && npx marge mochawesome-report/report.json"
+       },
+>>>>>>> f4358876c896326a74e3f12f9ac7ee67a45159c0
   "keywords": [],
   "author": "",
   "license": "ISC",
